@@ -2,14 +2,14 @@ require "database_cleaner/strategy"
 
 module DatabaseCleaner
   module Ldap
-    class Deletion < Strategy
+    class Deletion < DatabaseCleaner::Strategy
       attr_reader :filter
 
-      def initialize(filter: nil)
+      def initialize(opts={})
         raise ArgumentError,
-          "Option :filter must be a Net::LDAP::Filter" unless filter.nil? || filter.is_a?(Net::LDAP::Filter)
+          "Option :filter must be a Net::LDAP::Filter" unless opts.empty? || opts[:filter].is_a?(Net::LDAP::Filter)
 
-        @filter = filter
+        @filter = opts[:filter]
       end
 
       def clean
