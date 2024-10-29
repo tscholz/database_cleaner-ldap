@@ -9,7 +9,7 @@ Add this line to your application's Gemfile:
 ```ruby
 # Gemfile
 group :test do
-  gem 'database_cleaner-ldap', '~> 0.1.0'
+  gem 'database_cleaner-ldap', '~> 0.2.0'
 end
 ```
 
